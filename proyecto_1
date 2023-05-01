@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generar lista de números en PHP</title>
+</head>
+<body>
+	<h2>Ingrese un número para generar la lista:</h2>
+	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+		<input type="text" name="numero">
+		<input type="submit" name="submit" value="Generar">
+	</form>
+
+	<?php
+		// Comprobar si el formulario ha sido enviado
+		if(isset($_POST['submit'])) {
+			// Obtener el número ingresado por el usuario
+			$numero = $_POST['numero'];
+
+			// Imprimir la lista de números desde 1 hasta el número ingresado
+			echo "<h3>Lista de números:</h3>";
+			for($i = 1; $i <= $numero; $i++) {
+				echo $i . "<br>";
+			}
+		}
+	?>
+</body>
+</html>
